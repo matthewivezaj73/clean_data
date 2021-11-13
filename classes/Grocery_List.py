@@ -44,4 +44,7 @@ class GroceryList:
         else:
             print(f"{item_name} is not an item, please try again")
             return False
-    def
+    def remove_item(self,item_name):
+        """
+        Created a method that represents the act of removing an item from the list.
+        """
