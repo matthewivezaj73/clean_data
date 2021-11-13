@@ -26,6 +26,8 @@ while not not_list:
     if action.lower() == "a":
         #Creating a flag.
         not_add = False
+        #Testing for the user's input.
+        while not not_add
         #Asking the user what the name of the item is.
         item_name = input("Please enter the name of the item: ")
 
