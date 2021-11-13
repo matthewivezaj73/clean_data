@@ -1,3 +1,4 @@
+#Importing modules from the classes folder.
 from classes.Grocery_List import GroceryList
 from classes.database_access import DB_Connect
 #Importing libraries
