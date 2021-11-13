@@ -13,6 +13,6 @@ my_list = GroceryList("Carrots", 2.99, 2.50, 20)
 #Creating a list of groceries available.
 
 
-my_db.executeQuery("INSERT INTO crm_data(f_name, l_name, address, city, state, zip, company, primary_phone, secondary_phone, email_address) VALUES (\'"+
+my_db.executeQuery("INSERT INTO crm_data(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
 str(f_name) +"\',\'"+ str(l_name) +"\',\'"+str(street_address) +"\',\'"+ str(city)  +"\',\'"+str(state) +"\',\'"+str(zip_code) +"\',\'"+ str(company_name) +
 "\',\'"+ phone1 +"\',\'"+ phone2 +"\',\'"+ str(email) +"\')")
