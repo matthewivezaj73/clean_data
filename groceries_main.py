@@ -8,9 +8,10 @@ import time
 
 #Creating an instance of the class.
 my_list = GroceryList("Carrots", 2.99, 2.50, 20)
+#Creating a connection to the database
+my_db = DB_Connect('root','','python_projects')
 
 
-#Creating a list of groceries available.
 
 
 my_db.executeQuery("INSERT INTO crm_data(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
