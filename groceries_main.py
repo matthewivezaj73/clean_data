@@ -23,7 +23,7 @@ while not not_list:
     "Please enter S if you would like to save the list\nPlease enter E if you would like to exit")
     #Handling the case where the user selects a for add.
     if action.lower() == "a":
-        
+        #Asking the user what the name of the item is.
         item_name = input("Please enter the name of the item: ")
 
 
