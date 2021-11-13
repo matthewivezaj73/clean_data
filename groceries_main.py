@@ -21,10 +21,10 @@ while not not_list:
     "\nPlease enter A if you would like to add to the list\nPlease enter R if you would like to rremove to the list\n"+
     "Please enter S if you would like to save the list\nPlease enter E if you would like to exit")
     if action.lower() == "a":
-        
 
 
 
-my_db.executeQuery("INSERT INTO crm_data(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
+
+my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
 str(f_name) +"\',\'"+ str(l_name) +"\',\'"+str(street_address) +"\',\'"+ str(city)  +"\',\'"+str(state) +"\',\'"+str(zip_code) +"\',\'"+ str(company_name) +
 "\',\'"+ phone1 +"\',\'"+ phone2 +"\',\'"+ str(email) +"\')")
