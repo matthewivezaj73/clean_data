@@ -48,3 +48,4 @@ class GroceryList:
         """
         Created a method that represents the act of removing an item from the list.
         """
+        if item_name in my_groceries.keys()
