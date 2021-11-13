@@ -32,11 +32,12 @@ while not not_list:
             item_name = input("Please enter the name of the item: ")
             #Validating the name of the item entered and breaking out of the list if it is valid.
             not_add = my_list.add_item(item_name)
+        my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
+        str(f_name) +"\',\'"+ str(l_name) +"\',\'"+str(street_address) +"\',\'"+ str(city)  +"\',\'"+str(state) +"\',\'"+str(zip_code) +"\',\'"+ str(company_name) +
+        "\',\'"+ phone1 +"\',\'"+ phone2 +"\',\'"+ str(email) +"\')")
+
     elif action.lower() == "I":
-        
 
 
 
-my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
-str(f_name) +"\',\'"+ str(l_name) +"\',\'"+str(street_address) +"\',\'"+ str(city)  +"\',\'"+str(state) +"\',\'"+str(zip_code) +"\',\'"+ str(company_name) +
-"\',\'"+ phone1 +"\',\'"+ phone2 +"\',\'"+ str(email) +"\')")
+
