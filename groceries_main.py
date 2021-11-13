@@ -28,11 +28,12 @@ while not not_list:
         not_add = False
         #Testing for the user's input.
         while not not_add:
-
             #Asking the user what the name of the item is.
             item_name = input("Please enter the name of the item: ")
             #Validating the name of the item entered and breaking out of the list if it is valid.
             not_add = my_list.add_item(item_name)
+    elif action.lower() == "I":
+        
 
 
 
