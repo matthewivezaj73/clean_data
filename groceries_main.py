@@ -10,6 +10,7 @@ import time
 my_list = GroceryList("Carrots", 2.99, 2.50, 20)
 #Creating a connection to the database
 my_db = DB_Connect('root','','python_projects')
+list_data = my_db.executeSelectQuery("SELECT * FROM grocery_list")
 
 
 
