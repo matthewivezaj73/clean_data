@@ -12,7 +12,11 @@ my_list = GroceryList("Carrots", 2.99, 2.50, 20)
 my_db = DB_Connect('root','','python_projects')
 #Selects all of the data from the grocery list table.
 list_data = my_db.executeSelectQuery("SELECT * FROM grocery_list")
-
+#Entering a flag.
+not_list = False
+#Testing for the user's input.
+while not not_list:
+    
 
 
 
