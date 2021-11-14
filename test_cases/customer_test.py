@@ -11,19 +11,12 @@ class TestCustomerClass(unittest.TestCase):
     """
     def setUp(self):
         """
-        Create an instance of the Customer class for testing all class methods.
+        Create an instance of the Grocery_List class for testing all class methods.
         """
         #Creating an instance of the Validation class and adding a list.
         self.Grocery_List = GroceryList()
     def test_add_item_check_false(self):
         """
-        Test to see if add item method does not work
-        Tests Ran: assertFalse
-        assertFalse - Checks to see whether the 
-        add item object does not do as intended,
-
-        Such as the following:
-        ! " ' @ $ % ^ & * _  = + < >  ? ; [ ] { }, if it does, return true.
         """
         #Creating a list of bad addresses
         baditems = ["!","[]}{>","!a","a!","Attlewood@","]Attlew[ood&","Attlewood&","432 Attlewood{","}432 Attlewood", "?Shall{owwood]","@a l a n w o o d #","@A T T L E W O O D","!A T T L E W O O D", "A T T L E W O O D@", "A* T T L! E W# O O D@", "[Shallowwood;","[S","&Sha@llowwood;","@","@#","@*#","@latter# $Grove@","<Shallowwood> 324","$324 shallowwood","$324 #shallowwood","$324 shallowwood(*%"]
@@ -33,12 +26,6 @@ class TestCustomerClass(unittest.TestCase):
             self.assertFalse(self.Grocery_List.add_item(bitems))
     def test_check_price_true(self):
         """
-        Test to see if the address is valid
-        Tests Ran: assertTrue
-        assertTrue - Checks to see if The address 
-        is comprised primarily of alphanumeric characters,
-        but must not contain any of the following characters: 
-        ! " ' @ $ % ^ & * _  = + < >  ? ; [ ] { }
         """
         #Creating a list of good addresses
         gooditems = ["4123 Shallow Grove DR "," 4123 Shallow Grove DR"," 4123 Shallow Grove DR ","shallow","23132","3","34","342","3dsf2","a23s","shallow grove","shallow grove 4324234","SHALLOW GROVE","SHALLOW","4123 SHALLOW GROVE DR","4123 Shallow Grove DR 132","4123 shallow grove dr"]
