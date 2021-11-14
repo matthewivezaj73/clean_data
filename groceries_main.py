@@ -26,8 +26,7 @@ not_list = False
 #Testing for the user's input.
 while not not_list:
     #Asking the user what they would like to do.
-    action = input("Please enter C if your would like to create the list."+ 
-    "\nPlease enter I if you would like to import a new list to the table to add more groceries."+
+    action = input("Please enter I if you would like to import a new list to the table to add more groceries."+
     "\nPlease enter A if you would like to add to the list\nPlease enter R if you would like to rremove to the list\n"+
     "Please enter S if you would like to save the list\nPlease enter E if you would like to exit")
     #Handling the case where the user selects a for add.
