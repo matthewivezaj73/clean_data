@@ -134,10 +134,10 @@ while not not_list:
         while not data_question_ok:  
             #Asking the user what they would like to do.
             data_question = input("Would you like to edit the grocery_list (please enter \'grocery_list\' (without single quotes), respectively) "+
-            "If you would like to delete a record enter the word \"delete_crm\" or "+
+            "If you would like to delete a record enter the word \"delete_grocery\" or "+
             "\"delete_mailings\" without quotes (or enter Q to go back to the main menu)?")
             #If the user enters delete_crm.
-            if data_question.lower() == "delete_crm":
+            if data_question.lower() == "delete_grocery":
                 #Creating a new, blank list.
                 valid_ids = []
                 #Setting flags to false.
