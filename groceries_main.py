@@ -270,13 +270,13 @@ while not not_list:
                 customer_name_value = f"{first_name_value} {last_name_value}"
                 #Then updating the mailings database and saving the changes.
                 my_db.executeQuery("UPDATE grocery_list SET name=" + 
-                "\'"+ customer_name_value +"\'"+" WHERE item_id =" +"\'"+mail_id+"\'")
+                "\'"+ customer_name_value +"\'"+" WHERE item_id =" +"\'"+item_id+"\'")
                 #Setting a set of flags to true.
                 crm_data_ok = True
                 mail_id_ok = True
                 mail_question_ok = False
             #If the user enters q.
-            elif mailings_column.lower() == "q":
+            elif grocery_columns.lower() == "q":
                 #Setting flags to true to break out of the loop.
                 data_question_ok = False
                 del_ok = True
