@@ -247,30 +247,32 @@ while not not_list:
             #If the user enters 'name'
             if grocery_columns.lower() == "name":
                 #Setting flag to false so that the name can be tested.
-                first_name_ok = False
+                item_name_ok = False
                 #Running a loop to get and evaluate the first name.
-                while not first_name_ok: 
+                while not item_name_ok: 
                     #Asking for the user to input the first name, then evaluating it. I used the if 
                     # else because it wasn't working with only asking for the info and calling the check method. 
-                    first_name_value = input("Please enter the customer's first name (this can only "+
+                    item_name = input("Please enter the item name (this can only "+
                     "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
                     #Evaluating the first name.
-                    first_name_ok = my_groceries.customer_name_check(first_name_value)   
+                    item_name_ok = my_groceries.customer_name_check(item_name)   
+                #Then updating the mailings database and saving the changes.
+                my_db.executeQuery("UPDATE grocery_list SET item_name=" + 
+                "\'"+ item_name +"\'"+" WHERE item_id =" +"\'"+item_id+"\'")
+
                 #Setting a flag to false.
-                last_name_ok = False
+                sales_price_ok = False
                 #Running a loop to get and evaluate the last name.
-                while not last_name_ok:
+                while not sales_price_ok:
                     #Asking for the user to input the first name, then evaluating it. I used the if 
                     # else because it wasn't working with only asking for the info and calling the check method. 
-                    last_name_value = input("Please enter the customer's last name (this can only "+
+                    sales_price = input("Please enter the item's sale's price (this can only "+
                     "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
                     #Evaluating the last name.
-                    last_name_ok = my_groceries.customer_name_check(last_name_value)   
-                #Creating a value for the first, last name
-                customer_name_value = f"{first_name_value} {last_name_value}"
+                    sales_price_ok = my_groceries.check_price(sales_price)   
                 #Then updating the mailings database and saving the changes.
-                my_db.executeQuery("UPDATE grocery_list SET name=" + 
-                "\'"+ customer_name_value +"\'"+" WHERE item_id =" +"\'"+item_id+"\'")
+                my_db.executeQuery("UPDATE grocery_list SET sales_price=" + 
+                "\'"+ sales_price +"\'"+" WHERE item_id =" +"\'"+item_id+"\'")
                 #Setting a set of flags to true.
                 crm_data_ok = True
                 mail_id_ok = True
