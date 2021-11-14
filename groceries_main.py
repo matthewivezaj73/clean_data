@@ -128,6 +128,110 @@ while not not_list:
     elif action.lower() == "s":
     #Added a case for if the user selects r.
     elif action.lower() == "r":
+        #Setting flags to false
+        data_question_ok = False
+        #Testing for what the user would like to do.
+        while not data_question_ok:  
+            #Asking the user what they would like to do.
+            data_question = input("Would you like to edit the grocery_list (please enter \'grocery_list\' (without single quotes), respectively) "+
+            "If you would like to delete a record enter the word \"delete_crm\" or "+
+            "\"delete_mailings\" without quotes (or enter Q to go back to the main menu)?")
+            #If the user enters delete_crm.
+            if data_question.lower() == "delete_crm":
+                #Creating a new, blank list.
+                valid_ids = []
+                #Setting flags to false.
+                del_id_ok = False
+                #Testing for the id.
+                while not del_id_ok:  
+                    #Asking the user for the crm_id.
+                    crm_id = input("Please enter the crm_id for whose row you "+
+                    "would like to delete or enter q to quit (takes you back to the main menu): ")
+                    #Checking if the id enetered is a digit, else returns false.             
+                    if crm_id.isdigit():
+                        #selecting crm_id's from the crm_data where crm_id = the value inputted for crm_id.
+                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM crm_data WHERE crm_id ="+"\'"+crm_id +"\'") 
+                        #Looping through the list of IDs.
+                        for v_id in my_id:
+                            #Specifying the list to only grab the ID in the dictionary.
+                            for my_new_id in v_id.values():
+                                #Appending each id to the valid_ids to the valid_ids list (making it an str
+                                # so that it can be appended, I could not append as it without running into issues).
+                                valid_ids.append(str(my_new_id))
+                        #Checking to see if the id is not in the list of ids.
+                        if crm_id not in valid_ids:
+                            #Notifying the user that the ID is incorrect.
+                            print("\'"+crm_id + "\' is an invalid ID.")
+                        #If else, just move on.
+                        else:
+                            #Setting flags to break out of the loop.
+                            del_id_ok = True
+                            question_ok = False
+                    #If the user enters q.
+                    elif crm_id.lower() == "q":
+                        #Breaking out of the loop if the user chooses to quit.
+                        del_ok = True
+                        del_id_ok = True
+                        question_ok = True
+                    else:
+                        #Notifying the user that the ID entered was invalid.
+                        print("\'"+crm_id+"\'"+" is an invalid id!")
+                        #Setting del_id_ok to false to continue with asking for an id.
+                        del_id_ok = False
+                #Testing for the question and then executing the save to the database.
+                while not question_ok:
+                    #Setting a new flag to trap this question
+                    not_question_ok = False
+                    #Testing for the question
+                    while not not_question_ok:
+                        #Asking the user if they would like to delete the specified record.
+                        question = input("Are you sure you want to delete crm_id: " +crm_id+"\nenter Y/N (Y for Yes and N for No) to confirm: ")
+                        #Creating a select statement that only takes the crm_id (The reason I have this set as a private variable rather than global 
+                        # is because when I had it set as global, I ran into a bug that would not accept a valid ID).
+                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM crm_data")
+                        #If the user enters y, then delete the id.
+                        if question.title() == "Y":         
+                            #Applying the deletion to the Python_Database_Assignment table.
+                            my_db.executeQuery("DELETE FROM crm_data WHERE crm_id =" + "\'"+crm_id+"\'")
+                            question_ok = True
+                            not_question_ok = True
+                        #If the user selects n, then break.
+                        elif question.title() == "N":
+                            #Breaking out of the loop if the user changes there mind.
+                            del_id_ok = False
+                            question_ok = True
+                            break
+                        else:
+                            #Telling the user why the option was invalid.
+                            print("\'"+question + "\'"+" is an invalid option, please try again!")
+                    #Testing if del_id_ok is false. 
+                    if del_id_ok:
+                        #Creating a new list.
+                        valid_ids = []
+                        #Looping through each dictionary in the list.
+                        for v_id in my_id:
+                            #Specifying the list to only grab the ID in the dictionary.
+                            for my_new_id in v_id.values():
+                                #Appending each id to the valid_ids list (making it an str so that it can be 
+                                # appended, I could not append as it without running into issues).
+                                valid_ids.append(str(my_new_id))
+                        #Checking to see if an ID is not in the list.
+                        if crm_id not in valid_ids:
+                            #Notifying the user that the ID is incorrect.
+                            print("Invalid ID was entered, taking you back to the delete menu!")
+                            #Setting flag to true to take the user back to the delete menu.
+                            del_id_ok = False
+                            question_ok = True
+                        else:
+                            #Saving work
+                            my_db.conn.commit()
+                            #Setting flags to Take the user back to the delete menu.
+                            del_id_ok = False
+                            question_ok = True
+                    else:
+                        #Setting a flag to tell the program to keep running the loop.
+                        del_id_ok = False
+
     #Added a case for if the user selects e.
     elif action.lower() == "e":
 
