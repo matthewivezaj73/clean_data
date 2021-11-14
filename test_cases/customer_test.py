@@ -14,7 +14,7 @@ class TestCustomerClass(unittest.TestCase):
         Create an instance of the Customer class for testing all class methods.
         """
         #Creating an instance of the Validation class and adding a list.
-        self.my_customer = Customer()
+        self.Grocery_List = GroceryList()
     def test_address_check_false(self):
         """
         Test to see if address is not valid
