@@ -34,11 +34,15 @@ while not not_list:
             not_add = my_list.add_item(item_name)
         my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
         str(item_name) +"\',\'"+ str(sales_price) +"\',\'"+str(price_paid) +"\',\'"+ str(item_quantity)  +"\')")
-
+    #Added a case for if the user selects i.
     elif action.lower() == "i":
+    #Added a case for if the user selects c.
     elif action.lower() == "c":
+    #Added a case for if the user selects s.
     elif action.lower() == "s":
+    #Added a case for if the user selects r.
     elif action.lower() == "r":
+    #Added a case for if the user selects e.
     elif action.lower() == "e":
 
 
