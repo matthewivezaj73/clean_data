@@ -153,7 +153,7 @@ while not not_list:
                     #Checking if the id enetered is a digit, else returns false.             
                     if grocery_id.isdigit():
                         #selecting crm_id's from the crm_data where crm_id = the value inputted for crm_id.
-                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM grocery_list WHERE grocery_id ="+"\'"+grocery_id +"\'") 
+                        my_id = my_db.executeSelectQuery("SELECT item_id FROM grocery_list WHERE item_id ="+"\'"+grocery_id +"\'") 
                         #Looping through the list of IDs.
                         for v_id in my_id:
                             #Specifying the list to only grab the ID in the dictionary.
@@ -219,7 +219,7 @@ while not not_list:
                                 # appended, I could not append as it without running into issues).
                                 valid_ids.append(str(my_new_id))
                         #Checking to see if an ID is not in the list.
-                        if crm_id not in valid_ids:
+                        if item_id not in valid_ids:
                             #Notifying the user that the ID is incorrect.
                             print("Invalid ID was entered, taking you back to the delete menu!")
                             #Setting flag to true to take the user back to the delete menu.
