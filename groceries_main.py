@@ -7,6 +7,7 @@ import os
 import shutil
 import time
 
+
 #Creating an instance of the class.
 my_list = GroceryList("Carrots", 2.99, 2.50, 20)
 #Creating a connection to the database
