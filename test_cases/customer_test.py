@@ -15,7 +15,7 @@ class TestCustomerClass(unittest.TestCase):
         """
         #Creating an instance of the Validation class and adding a list.
         self.Grocery_List = GroceryList()
-    def test_address_check_false(self):
+    def test_add_item_check_false(self):
         """
         Test to see if address is not valid
         Tests Ran: assertFalse
@@ -31,7 +31,7 @@ class TestCustomerClass(unittest.TestCase):
         for items in baditems:
             #Evaluating each string.
             self.assertFalse(self.Grocery_List.address_check(items))
-    def test_address_check_true(self):
+    def test_add_items_check_true(self):
         """
         Test to see if the address is valid
         Tests Ran: assertTrue
