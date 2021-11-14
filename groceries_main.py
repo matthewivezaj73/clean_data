@@ -185,14 +185,14 @@ while not not_list:
                     #Testing for the question
                     while not not_question_ok:
                         #Asking the user if they would like to delete the specified record.
-                        question = input("Are you sure you want to delete crm_id: " +grocery_id+"\nenter Y/N (Y for Yes and N for No) to confirm: ")
+                        question = input("Are you sure you want to delete item_id: " +grocery_id+"\nenter Y/N (Y for Yes and N for No) to confirm: ")
                         #Creating a select statement that only takes the crm_id (The reason I have this set as a private variable rather than global 
                         # is because when I had it set as global, I ran into a bug that would not accept a valid ID).
-                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM grocery_list")
+                        my_id = my_db.executeSelectQuery("SELECT item_id FROM grocery_list")
                         #If the user enters y, then delete the id.
                         if question.title() == "Y":         
                             #Applying the deletion to the Python_Database_Assignment table.
-                            my_db.executeQuery("DELETE FROM crm_data WHERE crm_id =" + "\'"+crm_id+"\'")
+                            my_db.executeQuery("DELETE FROM crm_data WHERE item_id =" + "\'"+grocery_id+"\'")
                             question_ok = True
                             not_question_ok = True
                         #If the user selects n, then break.
