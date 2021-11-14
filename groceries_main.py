@@ -237,5 +237,69 @@ while not not_list:
 
     #Added a case for if the user selects e.
     elif action.lower() == "e":
+        #Setting a flag to false to for the test question.
+        while not mail_question_ok:
+            #Setting flag to true.
+            data_question_ok = True
+            #Asking the user for the column that they would like to edit.
+            mailings_column = input("Which column of the grocery_list table "+
+            "would you like to edit?\n-item_name\n- sales_price\n- price_paid\n- item_quantity\n- Q to quit:  ")
+            #If the user enters 'name'
+            if mailings_column.lower() == "name":
+                #Setting flag to false so that the name can be tested.
+                first_name_ok = False
+                #Running a loop to get and evaluate the first name.
+                while not first_name_ok: 
+                    #Asking for the user to input the first name, then evaluating it. I used the if 
+                    # else because it wasn't working with only asking for the info and calling the check method. 
+                    first_name_value = input("Please enter the customer's first name (this can only "+
+                    "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
+                    #Evaluating the first name.
+                    first_name_ok = my_customer.customer_name_check(first_name_value)   
+                #Setting a flag to false.
+                last_name_ok = False
+                #Running a loop to get and evaluate the last name.
+                while not last_name_ok:
+                    #Asking for the user to input the first name, then evaluating it. I used the if 
+                    # else because it wasn't working with only asking for the info and calling the check method. 
+                    last_name_value = input("Please enter the customer's last name (this can only "+
+                    "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
+                    #Evaluating the last name.
+                    last_name_ok = my_customer.customer_name_check(last_name_value)   
+                #Creating a value for the first, last name
+                customer_name_value = f"{first_name_value} {last_name_value}"
+                #Then updating the mailings database and saving the changes.
+                my_db.executeQuery("UPDATE Mailings SET name=" + 
+                "\'"+ customer_name_value +"\'"+" WHERE mail_id =" +"\'"+mail_id+"\'")
+                #Setting a set of flags to true.
+                crm_data_ok = True
+                mail_id_ok = True
+                mail_question_ok = False
+            #If the user enters q.
+            elif mailings_column.lower() == "q":
+                #Setting flags to true to break out of the loop.
+                data_question_ok = False
+                del_ok = True
+                mail_question_ok = True
+                mail_id_ok = True  
+            #If the user enters company.
+            elif mailings_column.lower() == "company":
+                #Setting flag so that we can perform a test.
+                company_ok = False
+                #Testing for the company name.
+                while not company_ok: 
+                    #Ask for the user for the company name, then evaluating it. I used 
+                    # the if else because it wasn't working with only asking for the info and calling the check method. 
+                    company = input("Please enter the company name "+
+                    "(this can include any value(s)!)").replace("'","\\'")
+                    #Evaluating the value passed into the company variable.
+                    company_ok = my_customer.company_name_check(company)
+                #Then updating the mailings database and saving the changes.
+                my_db.executeQuery("UPDATE Mailings SET company=" +
+                "\'"+ company +"\'"+" WHERE mail_id =" +"\'"+mail_id+"\'")
+                #Setting flags to true
+                mail_id_ok = False
+                crm_data_ok = True
+            #If the user enters address.
 
 
