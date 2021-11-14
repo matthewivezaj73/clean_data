@@ -33,6 +33,14 @@ while not not_list:
             item_name = input("Please enter the name of the item: ")
             #Validating the name of the item entered and breaking out of the list if it is valid.
             not_add = my_list.add_item(item_name)
+        #Creating a flag.
+        not_sales = False
+        #Testing for the user's input.
+        while not not_add:
+            #Asking the user what the sales price of the item .
+            item_name = input("Please enter the sales price of the item: ")
+            #Validating the name of the item entered and breaking out of the list if it is valid.
+            not_add = my_list.add_item(item_name)
         my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
         str(item_name) +"\',\'"+ str(sales_price) +"\',\'"+str(price_paid) +"\',\'"+ str(item_quantity)  +"\')")
     #Added a case for if the user selects i.
