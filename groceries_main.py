@@ -76,19 +76,26 @@ while not not_list:
                 #Checking to see if the length of the temp_line is equal to 10.
                 if len(temp_line) == 10:
                     #If the value at index 0 is first_name, then all we are doing is assigning it a value.
-                    if temp_line[0] == "first_name":
+                    if temp_line[0] == "item_name":
                         #Creating a formatted line
-                        line = f"{temp_line[0]}, {temp_line[1]}, {temp_line[2]}, {temp_line[3]}, {temp_line[4]}, {temp_line[5]}, {temp_line[6]}, {temp_line[7]}, {temp_line[8]}, {temp_line[9]}\n"
+                        line = f"{temp_line[0]}, {temp_line[1]}\"\n"
+                    elif temp_line[0] == "item_name":
+                        #Creating a formatted line
+                        line = f"{temp_line[0]}, {temp_line[1]}, {temp_line[2]}\"\n"
+
                     #Else, we will append all other values to a list.
-                    else:
+                    elif temp_line[0] == "item_name":
                         #Creating a formatted line
-                        line = f"\"{temp_line[0]}\", \"{temp_line[1]}\", \"{temp_line[2]}\", \"{temp_line[3]}\", \"{temp_line[4]}\", \"{temp_line[5]}\", \"{temp_line[6]}\", \"{temp_line[7]}\", \"{temp_line[8]}\", \"{temp_line[9]}\"\n"
+                        line = f"\"{temp_line[0]}\", \"{temp_line[1]}\", \"{temp_line[2]}\", \"{temp_line[3]}\"\n"
                         #Appending each line to a list.
                         output_content.append(line)
+                    #Handling the case where nothing works
+                    else:
+                        print("Sorry, but something went wrong.")
                 #Else, if the length of the temp_line is not equal to 10.
                 else:
                     #Checking to see if the first line is first_name.
-                    if temp_line[0] == "first_name":
+                    if temp_line[0] == "item_name":
                         #Creating a formatted line.
                         line = f"{temp_line[0]}, {temp_line[1]}, {temp_line[2]}, {temp_line[3]}, {temp_line[4]}, {temp_line[5]}, {temp_line[6]}, {temp_line[7]}, {temp_line[8]}, {temp_line[9]},  {temp_line[10]}\n"
                     else:
