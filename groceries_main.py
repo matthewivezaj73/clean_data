@@ -195,7 +195,7 @@ while not not_list:
                         #If the user enters y, then delete the id.
                         if question.title() == "Y":         
                             #Applying the deletion to the Python_Database_Assignment table.
-                            my_db.executeQuery("DELETE FROM crm_data WHERE item_id =" + "\'"+grocery_id+"\'")
+                            my_db.executeQuery("DELETE FROM grocery_list WHERE item_id =" + "\'"+grocery_id+"\'")
                             question_ok = True
                             not_question_ok = True
                         #If the user selects n, then break.
