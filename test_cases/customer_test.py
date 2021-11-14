@@ -31,7 +31,7 @@ class TestCustomerClass(unittest.TestCase):
         for bitems in baditems:
             #Evaluating each string.
             self.assertFalse(self.Grocery_List.add_item(bitems))
-    def test_add_items_check_true(self):
+    def test_check_price_true(self):
         """
         Test to see if the address is valid
         Tests Ran: assertTrue
@@ -46,7 +46,7 @@ class TestCustomerClass(unittest.TestCase):
         for gitems in gooditems:
             #Evaluating each string.
             self.assertTrue(self.Grocery_List.add_item(gitems))
-    def test_city_information_check_false(self):
+    def test_check_price_false(self):
         """
         Test to see if the city name is invalid.
         Tests Ran: 
