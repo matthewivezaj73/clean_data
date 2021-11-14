@@ -232,7 +232,6 @@ while not not_list:
                     else:
                         #Setting a flag to tell the program to keep running the loop.
                         del_id_ok = False
-
     #Added a case for if the user selects e.
     elif action.lower() == "e":
         #Setting a flag to false to for the test question.
