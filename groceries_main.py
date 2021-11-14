@@ -284,24 +284,6 @@ while not not_list:
                 del_ok = True
                 mail_question_ok = True
                 mail_id_ok = True  
-            #If the user enters company.
-            elif grocery_columns.lower() == "company":
-                #Setting flag so that we can perform a test.
-                company_ok = False
-                #Testing for the company name.
-                while not company_ok: 
-                    #Ask for the user for the company name, then evaluating it. I used 
-                    # the if else because it wasn't working with only asking for the info and calling the check method. 
-                    company = input("Please enter the company name "+
-                    "(this can include any value(s)!)").replace("'","\\'")
-                    #Evaluating the value passed into the company variable.
-                    company_ok = my_groceries.company_name_check(company)
-                #Then updating the mailings database and saving the changes.
-                my_db.executeQuery("UPDATE Mailings SET company=" +
-                "\'"+ company +"\'"+" WHERE mail_id =" +"\'"+item_id+"\'")
-                #Setting flags to true
-                mail_id_ok = False
-                crm_data_ok = True
-            #If the user enters address.
-
-
+    #If the user enters q.
+    elif action.lower() == "q":
+        not_list = False
