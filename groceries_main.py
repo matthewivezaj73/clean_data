@@ -283,7 +283,7 @@ while not not_list:
                 mail_question_ok = True
                 mail_id_ok = True  
             #If the user enters company.
-            elif mailings_column.lower() == "company":
+            elif grocery_columns.lower() == "company":
                 #Setting flag so that we can perform a test.
                 company_ok = False
                 #Testing for the company name.
@@ -293,7 +293,7 @@ while not not_list:
                     company = input("Please enter the company name "+
                     "(this can include any value(s)!)").replace("'","\\'")
                     #Evaluating the value passed into the company variable.
-                    company_ok = my_customer.company_name_check(company)
+                    company_ok = my_groceries.company_name_check(company)
                 #Then updating the mailings database and saving the changes.
                 my_db.executeQuery("UPDATE Mailings SET company=" +
                 "\'"+ company +"\'"+" WHERE mail_id =" +"\'"+mail_id+"\'")
