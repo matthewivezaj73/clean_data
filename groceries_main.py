@@ -145,12 +145,12 @@ while not not_list:
                 #Testing for the id.
                 while not del_id_ok:  
                     #Asking the user for the crm_id.
-                    crm_id = input("Please enter the crm_id for whose row you "+
+                    grocery_id = input("Please enter the crm_id for whose row you "+
                     "would like to delete or enter q to quit (takes you back to the main menu): ")
                     #Checking if the id enetered is a digit, else returns false.             
-                    if crm_id.isdigit():
+                    if grocery_id.isdigit():
                         #selecting crm_id's from the crm_data where crm_id = the value inputted for crm_id.
-                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM crm_data WHERE crm_id ="+"\'"+crm_id +"\'") 
+                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM grocery_list WHERE grocery_id ="+"\'"+grocery_id +"\'") 
                         #Looping through the list of IDs.
                         for v_id in my_id:
                             #Specifying the list to only grab the ID in the dictionary.
