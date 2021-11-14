@@ -153,7 +153,7 @@ while not not_list:
                     #Checking if the id enetered is a digit, else returns false.             
                     if grocery_id.isdigit():
                         #selecting crm_id's from the crm_data where crm_id = the value inputted for crm_id.
-                        my_id = my_db.executeSelectQuery("SELECT item_id FROM grocery_list WHERE item_id ="+"\'"+grocery_id +"\'") 
+                        item_id = my_db.executeSelectQuery("SELECT item_id FROM grocery_list WHERE item_id ="+"\'"+grocery_id +"\'") 
                         #Looping through the list of IDs.
                         for v_id in my_id:
                             #Specifying the list to only grab the ID in the dictionary.
