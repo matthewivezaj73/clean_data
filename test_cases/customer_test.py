@@ -26,11 +26,11 @@ class TestCustomerClass(unittest.TestCase):
         ! " ' @ $ % ^ & * _  = + < >  ? ; [ ] { }, if it does, return true.
         """
         #Creating a list of bad addresses
-        bad_addresses = ["!","[]}{>","!a","a!","Attlewood@","]Attlew[ood&","Attlewood&","432 Attlewood{","}432 Attlewood", "?Shall{owwood]","@a l a n w o o d #","@A T T L E W O O D","!A T T L E W O O D", "A T T L E W O O D@", "A* T T L! E W# O O D@", "[Shallowwood;","[S","&Sha@llowwood;","@","@#","@*#","@latter# $Grove@","<Shallowwood> 324","$324 shallowwood","$324 #shallowwood","$324 shallowwood(*%"]
+        baditems = ["!","[]}{>","!a","a!","Attlewood@","]Attlew[ood&","Attlewood&","432 Attlewood{","}432 Attlewood", "?Shall{owwood]","@a l a n w o o d #","@A T T L E W O O D","!A T T L E W O O D", "A T T L E W O O D@", "A* T T L! E W# O O D@", "[Shallowwood;","[S","&Sha@llowwood;","@","@#","@*#","@latter# $Grove@","<Shallowwood> 324","$324 shallowwood","$324 #shallowwood","$324 shallowwood(*%"]
         #Checkings for each string in the list.
-        for address in bad_addresses:
+        for items in baditems:
             #Evaluating each string.
-            self.assertFalse(self.my_customer.address_check(address))
+            self.assertFalse(self.Grocery_List.address_check(items))
     def test_address_check_true(self):
         """
         Test to see if the address is valid
