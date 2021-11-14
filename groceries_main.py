@@ -159,23 +159,23 @@ while not not_list:
                                 # so that it can be appended, I could not append as it without running into issues).
                                 valid_ids.append(str(my_new_id))
                         #Checking to see if the id is not in the list of ids.
-                        if crm_id not in valid_ids:
+                        if grocery_id not in valid_ids:
                             #Notifying the user that the ID is incorrect.
-                            print("\'"+crm_id + "\' is an invalid ID.")
+                            print("\'"+grocery_id + "\' is an invalid ID.")
                         #If else, just move on.
                         else:
                             #Setting flags to break out of the loop.
                             del_id_ok = True
                             question_ok = False
                     #If the user enters q.
-                    elif crm_id.lower() == "q":
+                    elif grocery_id.lower() == "q":
                         #Breaking out of the loop if the user chooses to quit.
                         del_ok = True
                         del_id_ok = True
                         question_ok = True
                     else:
                         #Notifying the user that the ID entered was invalid.
-                        print("\'"+crm_id+"\'"+" is an invalid id!")
+                        print("\'"+grocery_id+"\'"+" is an invalid id!")
                         #Setting del_id_ok to false to continue with asking for an id.
                         del_id_ok = False
                 #Testing for the question and then executing the save to the database.
@@ -185,10 +185,10 @@ while not not_list:
                     #Testing for the question
                     while not not_question_ok:
                         #Asking the user if they would like to delete the specified record.
-                        question = input("Are you sure you want to delete crm_id: " +crm_id+"\nenter Y/N (Y for Yes and N for No) to confirm: ")
+                        question = input("Are you sure you want to delete crm_id: " +grocery_id+"\nenter Y/N (Y for Yes and N for No) to confirm: ")
                         #Creating a select statement that only takes the crm_id (The reason I have this set as a private variable rather than global 
                         # is because when I had it set as global, I ran into a bug that would not accept a valid ID).
-                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM crm_data")
+                        my_id = my_db.executeSelectQuery("SELECT crm_id FROM grocery_list")
                         #If the user enters y, then delete the id.
                         if question.title() == "Y":         
                             #Applying the deletion to the Python_Database_Assignment table.
