@@ -10,6 +10,7 @@ import time
 my_groceries = ['Gallon of milk', 'Carton of eggs', 'Cheese block', 'Yogurt', 'Apples', 'Bananas', 'Carrots', 'Tomatoes', 'Potatoes', 'Broccoli', 'Meat', 
 'Chicken breast', 'Fresh fish', 'frozen fish', 'Grains', 'Loaf of bread', 'Dry pasta', 'Brown rice', 'Couscous', 'Tomato sauce', 'Peanut butter', 'Granola bars', 
 'Extra protein', 'Nuts', 'Dried beans', 'canned beans']
+#Creating a dictionary of prices for each item.
 my_prices = {'Gallon of milk':1.99, 'Carton of eggs': 2.88, 'Cheese block': 3.00, 'Yogurt': .99, 'Apples': .89, 
 'Bananas':1.21, 'Carrots':1.09, 'Tomatoes':3.99, 'Potatoes':2.89, 'Broccoli':2.33, 'Meat':3.76, 'Chicken breast':4.32, 'Fresh fish':2.99, 'frozen fish':2.95, 'Grains':1.88, 
 'Loaf of bread':1.32, 'Dry pasta':1.00, 'Brown rice':3.20, 'Couscous':2.95, 'Tomato sauce': 1.99, 'Peanut butter':2.00, 'Granola bars':1.44,'Extra protein':3.99, 'Nuts':2.50, 'Dried beans':3.00, 'canned beans':1.99}
