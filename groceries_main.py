@@ -119,7 +119,7 @@ while not not_list:
                     #Appending each line to the list.
                     my_nondup_lines.append(line)
             #Opening the file for writing/creating if it does not exist.
-            with open("text_files/customers.csv","w+") as fawn:
+            with open("text_files/grocery_list.csv","w+") as fawn:
                 #Going through each line in the list.
                 for line in my_nondup_lines:
                     #Writing each line to the file.
