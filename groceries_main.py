@@ -287,3 +287,5 @@ while not not_list:
     #If the user enters q.
     elif action.lower() == "q":
         not_list = False
+    else:
+        print(f"Sorry, I didn't understand, \'{action}\', please try again!")
