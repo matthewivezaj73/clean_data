@@ -125,8 +125,6 @@ while not not_list:
                     #Writing each line to the file.
                     fawn.write(line)             
 
-    #Added a case for if the user selects c.
-    elif action.lower() == "c":
     #Added a case for if the user selects s.
     elif action.lower() == "s":
     #Added a case for if the user selects r.
