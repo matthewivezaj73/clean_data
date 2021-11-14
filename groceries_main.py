@@ -61,7 +61,7 @@ while not not_list:
         #Creating an empty dictionary.
         my_dict = {}
         #Assinging a file path to a variable.
-        filename =  "text_files/customer_export.txt"
+        filename =  "text_files/grocery_list.txt"
         #Creating two blank lists for future use.
         output_content = []
         my_nondup_lines = []
