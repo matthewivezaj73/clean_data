@@ -17,10 +17,10 @@ class TestCustomerClass(unittest.TestCase):
         self.Grocery_List = GroceryList()
     def test_add_item_check_false(self):
         """
-        Test to see if address is not valid
+        Test to see if add item method does not work
         Tests Ran: assertFalse
         assertFalse - Checks to see whether the 
-        address passed will be contains characters that are not normally allowed,
+        add item object does not do as intended,
 
         Such as the following:
         ! " ' @ $ % ^ & * _  = + < >  ? ; [ ] { }, if it does, return true.
@@ -28,9 +28,9 @@ class TestCustomerClass(unittest.TestCase):
         #Creating a list of bad addresses
         baditems = ["!","[]}{>","!a","a!","Attlewood@","]Attlew[ood&","Attlewood&","432 Attlewood{","}432 Attlewood", "?Shall{owwood]","@a l a n w o o d #","@A T T L E W O O D","!A T T L E W O O D", "A T T L E W O O D@", "A* T T L! E W# O O D@", "[Shallowwood;","[S","&Sha@llowwood;","@","@#","@*#","@latter# $Grove@","<Shallowwood> 324","$324 shallowwood","$324 #shallowwood","$324 shallowwood(*%"]
         #Checkings for each string in the list.
-        for items in baditems:
+        for bitems in baditems:
             #Evaluating each string.
-            self.assertFalse(self.Grocery_List.address_check(items))
+            self.assertFalse(self.Grocery_List.address_check(bitems))
     def test_add_items_check_true(self):
         """
         Test to see if the address is valid
@@ -41,11 +41,11 @@ class TestCustomerClass(unittest.TestCase):
         ! " ' @ $ % ^ & * _  = + < >  ? ; [ ] { }
         """
         #Creating a list of good addresses
-        addresses = ["4123 Shallow Grove DR "," 4123 Shallow Grove DR"," 4123 Shallow Grove DR ","shallow","23132","3","34","342","3dsf2","a23s","shallow grove","shallow grove 4324234","SHALLOW GROVE","SHALLOW","4123 SHALLOW GROVE DR","4123 Shallow Grove DR 132","4123 shallow grove dr"]
+        gooditems = ["4123 Shallow Grove DR "," 4123 Shallow Grove DR"," 4123 Shallow Grove DR ","shallow","23132","3","34","342","3dsf2","a23s","shallow grove","shallow grove 4324234","SHALLOW GROVE","SHALLOW","4123 SHALLOW GROVE DR","4123 Shallow Grove DR 132","4123 shallow grove dr"]
         #Checkings for each string in the list.
-        for address in addresses:
+        for gitems in gooditems:
             #Evaluating each string.
-            self.assertTrue(self.my_customer.address_check(address))
+            self.assertTrue(self.my_customer.address_check(gitems))
     def test_city_information_check_false(self):
         """
         Test to see if the city name is invalid.
