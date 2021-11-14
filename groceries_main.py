@@ -52,9 +52,7 @@ while not not_list:
     #Added a case for if the user selects i.
     elif action.lower() == "i":
         #Truncating the data in the crm_data table.
-        my_db.executeQuery("TRUNCATE crm_data")
-        #Truncating the data in the Mailings table.
-        my_db.executeQuery("TRUNCATE Mailings")
+        my_db.executeQuery("TRUNCATE grocery_list")
         #Asking the user which database they would like to work with and creating a link to the file. 
         response_ok = False
         #Creating an empty dictionary.
