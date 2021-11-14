@@ -126,6 +126,9 @@ while not not_list:
 
     #Added a case for if the user selects s.
     elif action.lower() == "s":
+        #Saving all unsaved changes to the database.
+        my_db.conn.commit()
+
     #Added a case for if the user selects r.
     elif action.lower() == "r":
         #Setting flags to false
