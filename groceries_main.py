@@ -35,8 +35,10 @@ while not not_list:
         my_db.executeQuery("INSERT INTO grocery_list(item_name, sales_price, price_paid, item_quantity) VALUES (\'"+
         str(item_name) +"\',\'"+ str(sales_price) +"\',\'"+str(price_paid) +"\',\'"+ str(item_quantity)  +"\')")
 
-    elif action.lower() == "I":
-
-
+    elif action.lower() == "i":
+    elif action.lower() == "c":
+    elif action.lower() == "s":
+    elif action.lower() == "r":
+    elif action.lower() == "e":
 
 
