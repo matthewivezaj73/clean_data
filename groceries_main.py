@@ -296,7 +296,7 @@ while not not_list:
                     company_ok = my_groceries.company_name_check(company)
                 #Then updating the mailings database and saving the changes.
                 my_db.executeQuery("UPDATE Mailings SET company=" +
-                "\'"+ company +"\'"+" WHERE mail_id =" +"\'"+mail_id+"\'")
+                "\'"+ company +"\'"+" WHERE mail_id =" +"\'"+item_id+"\'")
                 #Setting flags to true
                 mail_id_ok = False
                 crm_data_ok = True
