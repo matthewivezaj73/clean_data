@@ -242,10 +242,10 @@ while not not_list:
             #Setting flag to true.
             data_question_ok = True
             #Asking the user for the column that they would like to edit.
-            mailings_column = input("Which column of the grocery_list table "+
+            grocery_columns = input("Which column of the grocery_list table "+
             "would you like to edit?\n-item_name\n- sales_price\n- price_paid\n- item_quantity\n- Q to quit:  ")
             #If the user enters 'name'
-            if mailings_column.lower() == "name":
+            if grocery_columns.lower() == "name":
                 #Setting flag to false so that the name can be tested.
                 first_name_ok = False
                 #Running a loop to get and evaluate the first name.
@@ -255,7 +255,7 @@ while not not_list:
                     first_name_value = input("Please enter the customer's first name (this can only "+
                     "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
                     #Evaluating the first name.
-                    first_name_ok = my_customer.customer_name_check(first_name_value)   
+                    first_name_ok = my_groceries.customer_name_check(first_name_value)   
                 #Setting a flag to false.
                 last_name_ok = False
                 #Running a loop to get and evaluate the last name.
@@ -265,12 +265,12 @@ while not not_list:
                     last_name_value = input("Please enter the customer's last name (this can only "+
                     "contain letters, a single quote, and a hyphen): ").replace("'","\\'")
                     #Evaluating the last name.
-                    last_name_ok = my_customer.customer_name_check(last_name_value)   
+                    last_name_ok = my_groceries.customer_name_check(last_name_value)   
                 #Creating a value for the first, last name
                 customer_name_value = f"{first_name_value} {last_name_value}"
                 #Then updating the mailings database and saving the changes.
-                my_db.executeQuery("UPDATE Mailings SET name=" + 
-                "\'"+ customer_name_value +"\'"+" WHERE mail_id =" +"\'"+mail_id+"\'")
+                my_db.executeQuery("UPDATE grocery_list SET name=" + 
+                "\'"+ customer_name_value +"\'"+" WHERE item_id =" +"\'"+mail_id+"\'")
                 #Setting a set of flags to true.
                 crm_data_ok = True
                 mail_id_ok = True
