@@ -30,7 +30,7 @@ class TestCustomerClass(unittest.TestCase):
         #Checkings for each string in the list.
         for bitems in baditems:
             #Evaluating each string.
-            self.assertFalse(self.Grocery_List.address_check(bitems))
+            self.assertFalse(self.Grocery_List.add_item(bitems))
     def test_add_items_check_true(self):
         """
         Test to see if the address is valid
@@ -45,7 +45,7 @@ class TestCustomerClass(unittest.TestCase):
         #Checkings for each string in the list.
         for gitems in gooditems:
             #Evaluating each string.
-            self.assertTrue(self.my_customer.address_check(gitems))
+            self.assertTrue(self.Grocery_List.add_item(gitems))
     def test_city_information_check_false(self):
         """
         Test to see if the city name is invalid.
