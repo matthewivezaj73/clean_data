@@ -28,7 +28,7 @@ class TestCustomerClass(unittest.TestCase):
         """
         """
         #Creating a list of good addresses
-        gooditems = ["4123 Shallow Grove DR "," 4123 Shallow Grove DR"," 4123 Shallow Grove DR ","shallow","23132","3","34","342","3dsf2","a23s","shallow grove","shallow grove 4324234","SHALLOW GROVE","SHALLOW","4123 SHALLOW GROVE DR","4123 Shallow Grove DR 132","4123 shallow grove dr"]
+        gooditems = ["4123.21"," 3212.00","21.12","0.21","0.1","0.00"]
         #Checkings for each string in the list.
         for gitems in gooditems:
             #Evaluating each string.
