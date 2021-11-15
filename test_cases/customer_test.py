@@ -42,7 +42,7 @@ class TestCustomerClass(unittest.TestCase):
         for bprices in bad_prices:
             #Evaluating each string.
             self.assertFalse(self.Grocery_List.check_price(bprices)) 
-    def test_city_information_check_true(self):
+    def test_remove_item_true(self):
         """
         """
         #Creating a list of good prices.
@@ -51,7 +51,7 @@ class TestCustomerClass(unittest.TestCase):
         for city in good_city_information:
             #Evaluating each string.
             self.assertTrue(self.Grocery_List.city_information_check(city)) 
-    def test_invalid_company_name_check(self):
+    def test_remove_item_check(self):
         """
         """
         #Creating a list of bad company to use in test
