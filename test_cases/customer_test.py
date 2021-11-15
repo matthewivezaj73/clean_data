@@ -58,7 +58,7 @@ class TestCustomerClass(unittest.TestCase):
         invalid_invalid_company_name_check_list = [" ","  ","   ","    ","     ", "      ","       ","        "]
         #Calling company_name_check and passing home in the arguments
         for company in invalid_invalid_company_name_check_list:
-            self.assertFalse(self.my_customer.company_name_check(company.strip()))
+            self.assertFalse(self.Grocery_List.company_name_check(company.strip()))
     def test_valid_company_name_check(self): 
         """
         """
