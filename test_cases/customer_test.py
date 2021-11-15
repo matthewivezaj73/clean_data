@@ -45,7 +45,7 @@ class TestCustomerClass(unittest.TestCase):
     def test_city_information_check_true(self):
         """
         """
-        #Creating a list of good city info to use in test
+        #Creating a list of good prices.
         good_city_information = ["Waterford'","Water'ford","\'Waterford","water\'ford","waterford'","Shelby '","' Shelby"," shelby","shelby","shelby township","utic","Shelby Township","Shelby'Township","'Shelby'Township'","ShelbyTownship","shelbytownship","SHELBY","SHELBY "," SHELBY"," SHELBY ","shelby "," shelby"," shelby "," Shelby","Shelby "," Shelby "]
         #Checkings for each string in the list.
         for city in good_city_information:
