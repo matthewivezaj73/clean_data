@@ -37,7 +37,7 @@ class TestCustomerClass(unittest.TestCase):
         """
         """
         #Creating a list of bad prices.
-        bad_prices = ["4123.21"," 3212.00","21.12","0.21","0.1","0.00"]
+        bad_prices = ["!4123.21","321200"," 21.12"," 21.12 ","21.12 ","@0.21%","0.1#"]
         #Checkings for each string in the list.
         for bprices in bad_prices:
             #Evaluating each string.
@@ -46,7 +46,7 @@ class TestCustomerClass(unittest.TestCase):
         """
         """
         #Creating a list of good prices.
-        good_city_information = ["Waterford'","Water'ford","\'Waterford","water\'ford","waterford'","Shelby '","' Shelby"," shelby","shelby","shelby township","utic","Shelby Township","Shelby'Township","'Shelby'Township'","ShelbyTownship","shelbytownship","SHELBY","SHELBY "," SHELBY"," SHELBY ","shelby "," shelby"," shelby "," Shelby","Shelby "," Shelby "]
+        good_prices = ["Waterford'","Water'ford","\'Waterford","water\'ford","waterford'","Shelby '","' Shelby"," shelby","shelby","shelby township","utic","Shelby Township","Shelby'Township","'Shelby'Township'","ShelbyTownship","shelbytownship","SHELBY","SHELBY "," SHELBY"," SHELBY ","shelby "," shelby"," shelby "," Shelby","Shelby "," Shelby "]
         #Checkings for each string in the list.
         for city in good_city_information:
             #Evaluating each string.
