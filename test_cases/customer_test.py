@@ -36,12 +36,12 @@ class TestCustomerClass(unittest.TestCase):
     def test_check_price_false(self):
         """
         """
-        #Creating a list of bad city info.
-        bad_city_information = ["1Waterford!'","@ waterford","Pontiac!","#Pontiac!","%Pontiac","231 waterford!","$231 waterford!","@321 waterford","321 waterford@",")321( waterford",")321( waterford@",")321( #waterford%","321 #waterford$","@w a t e r f o r d","@w a t e r f o r d^","w a t e r f o r d^"]
+        #Creating a list of bad prices.
+        bad_prices = ["4123.21"," 3212.00","21.12","0.21","0.1","0.00"]
         #Checkings for each string in the list.
-        for city in bad_city_information:
+        for bprices in bad_prices:
             #Evaluating each string.
-            self.assertFalse(self.my_customer.city_information_check(city)) 
+            self.assertFalse(self.my_customer.city_information_check(bprices)) 
     def test_city_information_check_true(self):
         """
         """
