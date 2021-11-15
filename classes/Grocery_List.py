@@ -46,7 +46,7 @@ class GroceryList:
             return False
     def remove_item(self,item_name,list_name):
         """
-        Created a method that represents the act of removing an item from the list.
+        Created a method that removes items from the list.
         """
         if item_name:
             list_name.pop(item_name)
